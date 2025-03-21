@@ -6,6 +6,16 @@ a{
     color: transparent;
 }
 
+.text-title{
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-subtitle{
+    color: rgb(151, 151, 151);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .botao-imagem {
     margin-top: 10px;
     background-color: #000000;
