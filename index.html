@@ -5,9 +5,10 @@
     <link rel="stylesheet" href="./scr/background.css">
     <link rel="shortcut icon" href="https://umaera.github.io/icons/pfp/dede-rounded.png" type="image/x-icon">
 </head>
+<button id="dark-mode-toggle">🌙</button>
 <body>
     <center>
-        <h1 class="text-title">Welcome to my site</web-site></h1> 
+        <h1 class="text-title">Welcome to my site</h1>
         <a class="color-box" href="./Projects">
             <button class="botao-imagem">
                 <img src="./assets/pasta.png" alt="Pasta">
@@ -16,18 +17,37 @@
         </a>
         <a class="color-box" href="https://linktr.ee/dede076">
             <button class="botao-imagem">
-                <img src="./assets/social.png" alt="Pasta">
+                <img src="./assets/social.png" alt="Social">
                 My Social Media
             </button>
         </a>
         <a class="color-box" href="./assets/image.png" alt="assets">
             <button class="botao-imagem">
-                <img src="./assets/image.png" alt="image">
+                <img src="./assets/image.png" alt="Assets">
                 Assets
-            </button>    
+            </button>
         </a>
     </center>
+
     <center>
         <h2 class="text-subtitle">This was made by Dede07 <img src="https://umaera.github.io/icons/pfp/dede-rounded.png" width="20"></h2>
     </center>
+
+    <script>
+        const toggleBtn = document.getElementById("dark-mode-toggle");
+
+        if (localStorage.getItem("dark-mode") === "true") {
+            document.body.classList.add("dark-mode");
+            toggleBtn.textContent = "☀️";
+        }
+
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            const isDark = document.body.classList.contains("dark-mode");
+
+            localStorage.setItem("dark-mode", isDark);
+
+            toggleBtn.textContent = isDark ? "☀️" : "🌙";
+        });
+    </script>
 </body>

@@ -1,17 +1,18 @@
-body{
+body {
     background-color: #313131;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-a{
+a {
     color: transparent;
 }
 
-.text-title{
+.text-title {
     color: aliceblue;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.text-subtitle{
+.text-subtitle {
     color: rgb(151, 151, 151);
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -21,22 +22,85 @@ a{
     background-color: #000000;
     color: rgb(255, 255, 255);
     font-size: 16px;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
     gap: 10px;
-    transition: 0.1s ease-in-out;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    min-width: auto;
+}
+
+.botao-imagem2 {
+    margin-top: 10px;
+    background-color: #7c7c7c;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    transition: 0.1s ease-out;
+    min-width: auto;
 }
 
 .botao-imagem img {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
+    transition: filter 0.3s ease;
 }
 
 .botao-imagem:hover {
     background-color: #2c2c2c;
-    transition: 0.1s ease-in-out;
     transform: scale(1.1);
+}
+
+.botao-imagem2:hover {
+    background-color: #e7e5e5;
+    transform: scale(1.1);
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode .botao-imagem {
+    background-color: #d3d3d3;
+    color: #121212;
+    border: 1px solid #999;
+}
+
+body.dark-mode .botao-imagem:hover {
+    background-color: #c6c6c6;
+}
+
+body.dark-mode a {
+    color: white;
+}
+
+body.dark-mode .botao-imagem img {
+    filter: invert(1);
+}
+
+#dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 30px;
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 1000;
+}
+
+body.dark-mode #dark-mode-toggle {
+    background-color: #ffffff;
+    color: #121212;
 }
