@@ -1,5 +1,65 @@
+.botao-animado {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: animarBotao 0.8s ease-out forwards;
+}
+
+.botao-animado:nth-child(1) {
+    animation-delay: 0.3s;
+}
+.botao-animado:nth-child(2) {
+    animation-delay: 0.5s;
+}
+.botao-animado:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+@keyframes animarBotao {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#nome-animado {
+    opacity: 0; 
+    animation: aparecer 2s forwards;
+    font-size: 40px;
+    color: #b9b9b9; 
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mode-animacao {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: aparecerModo 0.6s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+@keyframes aparecerModo {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 body {
-    background-color: #353535;
+    background-color: #454545;
     font-family: Arial, sans-serif;
     text-align: center;
 }
