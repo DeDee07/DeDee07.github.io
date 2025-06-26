@@ -1,26 +1,8 @@
-.animacao-footer {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: animarTextoFooter 1s ease-out forwards;
-    animation-delay: 1.2s;
-}
-
 @keyframes animarTextoFooter {
     to {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-
-.mode-animacao {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: aparecerModo 0.6s ease-out forwards;
-    animation-delay: 0.6s;
 }
 
 @keyframes aparecerModo {
@@ -30,37 +12,11 @@
     }
 }
 
-.botao-animado {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: animarBotao 0.8s ease-out forwards;
-}
-
-.botao-animado:nth-child(1) {
-    animation-delay: 0.3s;
-}
-.botao-animado:nth-child(2) {
-    animation-delay: 0.5s;
-}
-.botao-animado:nth-child(3) {
-    animation-delay: 0.7s;
-}
-
 @keyframes animarBotao {
     to {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-
-#nome-animado {
-    opacity: 0; 
-    animation: aparecer 2s forwards;
-    font-size: 40px;
-    color: #b9b9b9; 
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
 }
 
 @keyframes aparecer {
@@ -75,52 +31,72 @@
 }
 
 body {
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #454545;
+    color: white;
     transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
+    padding: 0;
 }
 
 a {
-    color: transparent;
+    color: inherit;
+    text-decoration: none;
 }
 
 .text-title {
     color: aliceblue;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .text-subtitle {
     color: rgb(151, 151, 151);
-    font-family: Arial, Helvetica, sans-serif;
+}
+
+#dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 30px;
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: aparecerModo 0.6s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+.animacao-footer {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: animarTextoFooter 1s ease-out forwards;
+    animation-delay: 1.2s;
+}
+
+#nome-animado {
+    opacity: 0; 
+    animation: aparecer 2s forwards;
+    font-size: 40px;
+    color: #b9b9b9; 
+    text-align: center;
 }
 
 .botao-imagem {
     margin-top: 10px;
     background-color: #000000;
-    color: rgb(255, 255, 255);
+    color: white;
     font-size: 16px;
     padding: 8px 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
+    align-items: center;
     gap: 10px;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-    min-width: auto;
-}
-
-.botao-imagem2 {
-    margin-top: 10px;
-    background-color: #7c7c7c;
-    color: rgb(0, 0, 0);
-    font-size: 16px;
-    padding: 6px 14px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    gap: 10px;
-    transition: 0.1s ease-out;
-    min-width: auto;
 }
 
 .botao-imagem img {
@@ -134,10 +110,35 @@ a {
     transform: scale(1.1);
 }
 
+.botao-imagem2 {
+    margin-top: 10px;
+    background-color: #7c7c7c;
+    color: black;
+    font-size: 16px;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
 .botao-imagem2:hover {
     background-color: #e7e5e5;
     transform: scale(1.1);
 }
+
+.botao-animado {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: animarBotao 0.8s ease-out forwards;
+}
+
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.5s; }
+.delay-3 { animation-delay: 0.7s; }
+.delay-4 { animation-delay: 0.9s; }
 
 body.dark-mode {
     background-color: #121212;
@@ -154,29 +155,27 @@ body.dark-mode .botao-imagem:hover {
     background-color: #c6c6c6;
 }
 
-body.dark-mode a {
-    color: white;
-}
-
 body.dark-mode .botao-imagem img {
     filter: invert(1);
 }
 
-#dark-mode-toggle {
-    position: fixed;
-    top: 10px;
-    right: 30px;
-    background-color: #222;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    z-index: 1000;
+body.dark-mode #dark-mode-toggle {
+    background-color: white;
+    color: #121212;
 }
 
-body.dark-mode #dark-mode-toggle {
-    background-color: #ffffff;
-    color: #121212;
+.link-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+@media (max-width: 600px) {
+    .botao-imagem {
+        width: 90%;
+        justify-content: center;
+    }
 }

@@ -1,52 +1,69 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Site Dede07</title>
-    <link rel="stylesheet" href="./scr/background.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Dede07</title>
+  <meta name="description" content="Site pessoal de Dede07 com projetos, redes sociais e conta Fortnite.">
+  <link rel="stylesheet" href="./scr/background.css" />
+  <link rel="icon" href="./assets/favicon.ico" />
 </head>
-<button id="dark-mode-toggle" class="mode-animacao">🌙</button>
 <body>
-    <center>
-        <h1 id="nome-animado" class="text-title">Welcome to site</h1> <h1 id="nome-animado">dede07</h1>
-        <a class="color-box" href="https://linktr.ee/dede076">
-            <button class="botao-imagem botao-animado">
-                <img src="./assets/social.png" alt="Social">
-                My Social Media
-            </button>
-        </a>
-        <a class="color-box" href="https://osu.ppy.sh/users/37686188">
-            <button class="botao-imagem botao-animado">
-                <img src="./assets/osu.png" alt="Osu!">
-                Osu! Perfil
-            </button>
-        </a>
-        <a class="color-box" href="https://fortnitetracker.com/profile/all/DedeOnTheGrind">
-            <button class="botao-imagem botao-animado">
-                <img src="./assets/Fortnite.png" alt="Fortnite">
-                fortnite account
-            </button>
-        </a>
-    </center>
-    <center>
-        <h2 class="text-subtitle animacao-footer">This was made by Dede07 
-        </h2>
-    </center>
-    <script>
-        const toggleBtn = document.getElementById("dark-mode-toggle");
+  <button id="dark-mode-toggle" class="mode-animacao" aria-label="Toggle dark mode">🌙</button>
 
-        if (localStorage.getItem("dark-mode") === "true") {
-            document.body.classList.add("dark-mode");
-            toggleBtn.textContent = "☀️";
-        }
+  <main style="text-align: center;">
+    <h1 class="text-title">Welcome to site</h1>
+    <h1 id="nome-animado">dede07</h1>
 
-        toggleBtn.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-            const isDark = document.body.classList.contains("dark-mode");
+    <div class="link-buttons">
+      <a class="color-box" href="./Projects/index.html">
+        <button class="botao-imagem botao-animado">
+          <img src="./assets/pasta.png" alt="Projects Folder">
+          My Projects
+        </button>
+      </a>
 
-            localStorage.setItem("dark-mode", isDark);
+      <a class="color-box" href="https://linktr.ee/dede076">
+        <button class="botao-imagem botao-animado">
+          <img src="./assets/social.png" alt="Social Media">
+          My Social Media
+        </button>
+      </a>
 
-            toggleBtn.textContent = isDark ? "☀️" : "🌙";
-        });
-    </script>
+      <a class="color-box" href="https://fortnitetracker.com/profile/all/DedeOnTheGrind">
+        <button class="botao-imagem botao-animado">
+          <img src="./assets/Fortnite.png" alt="Fortnite Account">
+          Fortnite Account
+        </button>
+      </a>
+
+      <a class="color-box" href="https://apidede07.github.io/">
+        <button class="botao-imagem botao-animado">
+          <img src="./assets/Website.png" alt="Other Website">
+          Other Website
+        </button>
+      </a>
+    </div>
+  </main>
+
+  <footer style="text-align: center;">
+    <h2 class="text-subtitle animacao-footer">This was made by Dede07</h2>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("dark-mode-toggle");
+    const body = document.body;
+
+    if (localStorage.getItem("dark-mode") === "true") {
+      body.classList.add("dark-mode");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      const isDark = body.classList.toggle("dark-mode");
+      localStorage.setItem("dark-mode", isDark);
+      toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    });
+  </script>
 </body>
 </html>
